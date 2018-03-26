@@ -123,8 +123,6 @@ public class NettyProducerIT {
 		assertNotNull(exchange);
 		assertTrue(exchange.hasOut());
 		Message out = exchange.getOut();
-		log.info("Out:" + out);
-
 		assertEquals(200, out.getHeader(Exchange.HTTP_RESPONSE_CODE, Integer.class).intValue());
 
 		byte[] payload = out.getBody(byte[].class);

@@ -21,6 +21,9 @@
 			<setBody>
 				<simple>${body}</simple>
 			</setBody>
+			<setHeader headerName="Content-Type">
+				<constant>application/octet-stream</constant>
+			</setHeader>			
 		</route>
 
 	</camelContext>

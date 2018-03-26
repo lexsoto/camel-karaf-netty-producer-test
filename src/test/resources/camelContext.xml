@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint 
+	xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:camel="http://camel.apache.org/schema/blueprint"
+	xmlns:prop="http://camel.apache.org/schema/placeholder" 
+	xsi:schemaLocation="
+             http://www.osgi.org/xmlns/blueprint/v1.0.0 
+             https://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
+
+	<camelContext id="echo-service" trace="true" streamCache="true" xmlns="http://camel.apache.org/schema/blueprint">
+
+		<rest id="services" path="/">
+			<post id="generate-service" uri="echo">
+				<to uri="direct:echo-route" />
+			</post>
+		</rest>
+		
+		<route id="echo-route">
+			<from uri="netty4-http:http://127.0.0.1:8080/echo" />
+			<setBody>
+				<simple>${body}</simple>
+			</setBody>
+		</route>
+
+	</camelContext>
+</blueprint>

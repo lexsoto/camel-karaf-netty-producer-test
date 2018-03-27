@@ -10,12 +10,6 @@
 
 	<camelContext id="echo-service" trace="true" streamCache="true" xmlns="http://camel.apache.org/schema/blueprint">
 
-		<rest id="services" path="/">
-			<post id="generate-service" uri="echo">
-				<to uri="direct:echo-route" />
-			</post>
-		</rest>
-		
 		<route id="echo-route">
 			<from uri="netty4-http:http://127.0.0.1:8080/echo" />
 			<setBody>

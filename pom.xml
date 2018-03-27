@@ -11,7 +11,7 @@
 	<properties>
 		<pax-exam.version>4.9.2</pax-exam.version>
 		<camel.version>2.21.0</camel.version>
-		<karaf.version>4.1.5</karaf.version>
+ 		<karaf.version>4.1.5</karaf.version>
 	</properties>
 
 	<dependencies>

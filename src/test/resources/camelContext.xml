@@ -17,7 +17,8 @@
 			</setBody>
 			<setHeader headerName="Content-Type">
 				<constant>application/octet-stream</constant>
-			</setHeader>			
+			</setHeader>
+			<log message="Returning: ${body}" />			
 		</route>
 
 	</camelContext>
